@@ -1,0 +1,224 @@
+Principal
+
+
+package com.mycompany.controlederesiduo;
+
+/**
+ *
+ 
+ */
+import java.util.ArrayList;
+
+public class principal {
+    
+    private ArrayList< ControleDeResiduo > controleDeResiduo;
+    
+    public principal() {
+        controleDeResiduo = new ArrayList<>();
+    }
+    
+    public void adicionar(ControleDeResiduo r) {
+        controleDeResiduo.add(r);
+    }
+    
+    public String listar() {
+        String resultado = "";
+        for (int i = 0; i < controleDeResiduo.size(); i++) {
+        ControleDeResiduo r = controleDeResiduo.get(i);
+        resultado += r.imprimir() + "\n\n";
+        }
+        return resultado;
+    }
+    
+    public ControleDeResiduo buscar(int codigoResiduo) {
+        ControleDeResiduo resultado = new ControleDeResiduo();
+        for (int i = 0; i < controleDeResiduo.size(); i++) {
+        ControleDeResiduo r = controleDeResiduo.get(i);
+        if (r.getCodigoResiduo() == codigoResiduo) {
+        resultado = r;
+        break;
+            }
+        }
+        return resultado;
+    }
+}
+
+
+Residuos 
+
+package com.mycompany.controlederesiduo;
+
+/**
+ *
+ * 
+ */
+import java.util.ArrayList;
+
+public class Residuos {
+    
+    private ArrayList< ControleDeResiduo > controleDeResiduo;
+    
+    public Residuos() {
+        controleDeResiduo = new ArrayList<>();
+    }
+    
+    public void adicionar(ControleDeResiduo r) {
+        controleDeResiduo.add(r);
+    }
+    
+    public String listar() {
+        String resultado = "";
+        for (int i = 0; i < controleDeResiduo.size(); i++) {
+        ControleDeResiduo r = controleDeResiduo.get(i);
+        resultado += r.imprimir() + "\n\n";
+        }
+        return resultado;
+    }
+    
+    public ControleDeResiduo buscar(int codigoResiduo) {
+        ControleDeResiduo resultado = new ControleDeResiduo();
+        for (int i = 0; i < controleDeResiduo.size(); i++) {
+        ControleDeResiduo r = controleDeResiduo.get(i);
+        if (r.getCodigoResiduo() == codigoResiduo) {
+        resultado = r;
+        break;
+            }
+        }
+        return resultado;
+    }
+}
+
+
+Controle de descarte
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.controlederesiduo;
+
+/**
+ *
+ * 
+ */
+public class ControleDeResiduo {
+    
+    private int codigoResiduo;
+    private String tipoResiduo;
+    private String acondicionamento;
+    private int codigoONU;
+    private String status;
+    private String dataAmarzenamento;
+    private String areaGeracaoDeResiduo;
+    private String turnoDeGeracao;
+
+   
+    public ControleDeResiduo() {
+        codigoResiduo = 0;
+        tipoResiduo = "";
+        acondicionamento = "";
+        codigoONU = 0;
+        status = "";
+        dataAmarzenamento = "";
+        areaGeracaoDeResiduo = "";
+        turnoDeGeracao= "";
+
+    }
+
+    public ControleDeResiduo (int codigoResiduo,String tipoResiduo,String acondicionamento,int codigoONU,String status,String dataAmarzenamento, String areaGeracaoDeResiduo, String turnoDeGeracao) {
+        this. codigoResiduo = codigoResiduo;
+        this. tipoResiduo = tipoResiduo;
+        this. acondicionamento = acondicionamento;
+        this. codigoONU = codigoONU;
+        this. status = status;
+        this. dataAmarzenamento = dataAmarzenamento;
+        this. areaGeracaoDeResiduo = areaGeracaoDeResiduo;
+        this. turnoDeGeracao = turnoDeGeracao;
+
+
+
+    }
+    
+    public String imprimir() {
+        String resultado = 
+                String.format("Código do resíduo: = %d", codigoResiduo) + "\n" +
+                String.format("Tipo do resíduo: = %s", tipoResiduo) + "\n" +
+                String.format("Acondicionamento: = %s", acondicionamento) + "\n" +
+                String.format("Código da ONU: = %d", codigoONU) + "\n" +
+                String.format("Status: = %s", status) + "\n" +
+                String.format("Data de armazenamento:  = %s", dataAmarzenamento)+ "\n" +
+                String.format("Área de geração do resíduo: = %s", areaGeracaoDeResiduo) + "\n" +
+                String.format("Turno de geração:  = %s", turnoDeGeracao);
+                
+                return resultado;
+    }
+    
+
+    public int getCodigoResiduo() {
+        return codigoResiduo;
+    }
+
+    public void setCodigoResiduo(int codigoResiduo) {
+        this.codigoResiduo = codigoResiduo;
+    }
+
+    public String getTipoResiduo() {
+        return tipoResiduo;
+    }
+
+    public void setTipoResiduo(String tipoResiduo) {
+        this.tipoResiduo = tipoResiduo;
+    }
+
+    public String getAcondicionamento() {
+        return acondicionamento;
+    }
+
+    public void setAcondicionamento(String acondicionamento) {
+        this.acondicionamento = acondicionamento;
+    }
+
+    public int getCodigoONU() {
+        return codigoONU;
+    }
+
+    public void setCodigoONU(int codigoONU) {
+        this.codigoONU = codigoONU;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDataAmarzenamento() {
+        return dataAmarzenamento;
+    }
+
+    public void setDataAmarzenamento(String dataAmarzenamento) {
+        this.dataAmarzenamento = dataAmarzenamento;
+    }
+
+    public String getAreaGeracaoDeResiduo() {
+        return areaGeracaoDeResiduo;
+    }
+
+    public void setAreaGeracaoDeResiduo(String areaGeracaoDeResiduo) {
+        this.areaGeracaoDeResiduo = areaGeracaoDeResiduo;
+    }
+
+    public String getTurnoDeGeracao() {
+        return turnoDeGeracao;
+    }
+
+    public void setTurnoDeGeracao(String turnoDeGeracao) {
+        this.turnoDeGeracao = turnoDeGeracao;
+    }
+    
+}
+
+    
+
